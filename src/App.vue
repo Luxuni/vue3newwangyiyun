@@ -1,21 +1,61 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import MainTabBar from "@/components/main_tab_bar/MainTabBar.vue"
+import SecondaryTabBar from "@/components/main_tab_bar/SecondaryTabBar.vue"
 </script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <suspense>
+    <template #default>
+      <div class="content">
+        <main-tab-bar></main-tab-bar>
+        <router-view name="SecondaryTabBar" #default="{Component}">
+          <component :is="Component??SecondaryTabBar"></component>
+        </router-view>
+        <div class="m_view">
+          <div class="s_view">
+            <router-view #default="{Component}">
+              <component :is="Component"></component>
+            </router-view>
+          </div>
+        </div>
+      </div>
+    </template>
+  </suspense>
 </template>
+<style scoped lang="scss">
+.main_container {
+  min-width: 980px;
+  min-height: 100%;
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  .content {
+    min-height: calc(100% - 60px);
+
+    .m_view {
+      display: flex;
+      justify-content: center;
+      background-color: #F5D7BE;
+
+      .s_view {
+
+      }
+    }
+  }
+
+  .push {
+    height: 60px;
+  }
+
+  .footer {
+    position: fixed;
+    height: 60px;
+    margin-top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999999;
+
+    .player {
+
+    }
+  }
 }
 </style>

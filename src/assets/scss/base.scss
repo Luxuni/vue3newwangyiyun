@@ -1,0 +1,124 @@
+.el-carousel__button {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  border-radius: 8px;
+}
+
+.is-active {
+  .el-carousel__button {
+    background: #B2281E;
+  }
+}
+
+.el-table tr {
+  background-color: rgba(130, 1, 5, 0.6);
+}
+
+.el-table td.el-table__cell, .el-table th.el-table__cell.is-leaf {
+  border: none;
+}
+
+.el-table th.el-table__cell {
+  background-color: rgba(130, 1, 5, 0.7) !important;
+}
+
+.el-table, .el-table__empty-text, {
+  color: #000000;
+}
+
+.cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+
+.el-table__body tr.current-row > td.el-table__cell {
+  background-color: #000000;
+}
+
+
+.el-table--enable-row-hover .el-table__body tr {
+  td {
+    transition: all .1s linear;
+
+    .cell {
+      transition: all .3s linear;
+    }
+  }
+
+  &:hover {
+    td {
+      background-color: #636e72 !important;
+
+      .cell {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.el-popper.is-light {
+  background-color: #000000;
+  border: none;
+
+  p {
+    color: #ffffff;
+    font-size: 12px;
+  }
+}
+
+.el-dialog--center .el-dialog__body {
+  height: 100px;
+  padding: 0 40px;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+}
+
+.el-dialog--center .el-dialog__footer {
+  span {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.el-input__prefix-inner{
+  align-items: center;
+}
+
+.el-popover {
+  z-index: 9999999999!important;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(130, 1, 5, .5);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 7px;
+  background-color: #9B1509;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
